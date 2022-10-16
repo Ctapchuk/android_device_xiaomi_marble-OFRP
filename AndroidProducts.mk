@@ -15,4 +15,5 @@
 #
 
 PRODUCT_MAKEFILES := \
+    $(LOCAL_DIR)/recovery/twrp_AI2201.mk \
     $(LOCAL_DIR)/recovery/twrp_AI2202.mk
