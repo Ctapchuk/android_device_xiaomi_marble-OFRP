@@ -1,4 +1,4 @@
-# ASUS Snapdragon 888(+) devices
-TWRP common device tree for ASUS sm8350 devices
-- ROG Phone 5 Series
-- ZenFone 8
+# ASUS Snapdragon 8+ Gen 1 devices
+TWRP common device tree for ASUS sm84xx devices
+- ROG Phone 6 Series
+- ZenFone 9
