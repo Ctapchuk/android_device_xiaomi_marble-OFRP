@@ -1,0 +1,12 @@
+# Copyright (c) 2021 Qualcomm Technologies, Inc.
+# All Rights Reserved.
+# Confidential and Proprietary - Qualcomm Technologies, Inc.
+
+on init
+    start keymint-qti
+
+service keymint-qti /system/bin/android.hardware.security.keymint-service-qti
+    user root
+    group root
+    disabled
+    seclabel u:r:recovery:s0
