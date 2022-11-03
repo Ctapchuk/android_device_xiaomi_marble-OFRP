@@ -1,0 +1,9 @@
+on boot
+    start usbgadget-hal-1-1
+
+service usbgadget-hal-1-1 /system/bin/android.hardware.usb.gadget@1.1-service-qti
+    user root
+    group root
+    setenv LD_LIBRARY_PATH /vendor/lib64:/vendor/lib:/system/lib64:/system/lib:/sbin
+    disabled
+    seclabel u:r:recovery:s0

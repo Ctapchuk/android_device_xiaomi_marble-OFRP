@@ -37,11 +37,19 @@ on charger
     mkdir /config/usb_gadget/g1/configs/b.1 0770
     mkdir /config/usb_gadget/g1/configs/b.1/strings/0x409 0770
     write /config/usb_gadget/g1/configs/b.1/MaxPower 900
-    exec u:r:vendor_qti_init_shell:s0 -- /vendor/bin/init.qcom.usb.sh
     write /config/usb_gadget/g1/strings/0x409/product ${vendor.usb.product_string}
     wait /sys/class/udc/${sys.usb.controller}
     setprop sys.usb.configfs 1
     setprop vendor.usb.use_ffs_mtp 1
+
+on init
+    setprop sys.usb.configfs 1
+
+on property:ro.boot.usbcontroller=*
+    setprop sys.usb.controller ${ro.boot.usbcontroller}
+    wait /sys/bus/platform/devices/${ro.boot.usb.dwc3_msm:-a600000.ssusb}/mode
+    write /sys/bus/platform/devices/${ro.boot.usb.dwc3_msm:-a600000.ssusb}/mode peripheral
+    wait /sys/class/udc/${ro.boot.usbcontroller} 1
 
 on post-fs
     mount configfs none /config
@@ -71,19 +79,11 @@ on post-fs
     mkdir /dev/usb-ffs/adb 0770 shell system
     mount functionfs adb /dev/usb-ffs/adb uid=2000,gid=1000,rmode=0770,fmode=0660
     setprop sys.usb.mtp.device_type 3
-    exec u:r:vendor_qti_init_shell:s0 -- /vendor/bin/init.qcom.usb.sh
-    write /config/usb_gadget/g1/strings/0x409/product ${vendor.usb.product_string}
-    write /config/usb_gadget/g2/strings/0x409/product ${vendor.usb.product_string}
 
 on post-fs && property:vendor.usb.use_ffs_mtp=1
    mkdir /config/usb_gadget/g1/functions/ffs.mtp
    mkdir /dev/usb-ffs/mtp 0770 mtp mtp
    mount functionfs mtp /dev/usb-ffs/mtp rmode=0770,fmode=0660,uid=1024,gid=1024,no_disconnect=1
-
-on boot
-    setprop sys.usb.config ${persist.vendor.usb.config}
-    write /config/usb_gadget/g1/strings/0x409/product ${ro.vendor.asus.product.mkt_name}
-    write /config/usb_gadget/g2/strings/0x409/product ${ro.vendor.asus.product.mkt_name}
 
 on boot && property:vendor.usb.use_gadget_hal=1
    setprop sys.usb.configfs 2

@@ -1,11 +1,14 @@
-# Copyright (c) 2021 Qualcomm Technologies, Inc.
+#
+# Copyright (c) 2019 Qualcomm Technologies, Inc.
 # All Rights Reserved.
 # Confidential and Proprietary - Qualcomm Technologies, Inc.
+#
+#
 
-on property:vendor.sys.listeners.registered=true
-    start keymint-qti
+on property:hwservicemanager.ready=true
+    start qseecom-service
 
-service keymint-qti /system/bin/android.hardware.security.keymint-service-qti
+service qseecom-service /system/bin/vendor.qti.hardware.qseecom@1.0-service
     user root
     group root
     setenv LD_LIBRARY_PATH /vendor/lib64:/vendor/lib:/system/lib64:/system/lib:/sbin

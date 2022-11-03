@@ -29,6 +29,8 @@ import /init.recovery.qcom_decrypt.rc
 
 on init
     write /sys/class/backlight/panel0-backlight/brightness 200
+    setprop sys.usb.configfs 1
+    setprop vendor.usb.use_ffs_mtp 1
 
 on fs
     wait /dev/block/platform/soc/${ro.boot.bootdevice}
@@ -44,10 +46,16 @@ on post-fs-data
 # +++ ASUS_BSP : add for asus battery safety upgrade and health partition
 #mount batinfo
     wait /dev/block/bootdevice/by-name/batinfo
-    exec /system/bin/e2fsck -p /dev/block/bootdevice/by-name/batinfo
     mount ext4 /dev/block/bootdevice/by-name/batinfo /batinfo nosuid nodev noatime barrier=1
     chown shell root /batinfo
     chmod 0775 /batinfo
     restorecon_recursive /batinfo
 # --- ASUS_BSP : add for asus battery safety upgrade and health partition
+
+on property:ro.boot.usbcontroller=*
+    setprop sys.usb.controller ${ro.boot.usbcontroller}
+    wait /sys/bus/platform/devices/${ro.boot.usb.dwc3_msm:-a600000.ssusb}/mode
+    write /sys/bus/platform/devices/${ro.boot.usb.dwc3_msm:-a600000.ssusb}/mode peripheral
+    wait /sys/class/udc/${ro.boot.usbcontroller}
+    write /sys/class/udc/${ro.boot.usbcontroller} 1
 
