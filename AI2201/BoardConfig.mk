@@ -27,7 +27,6 @@
 -include $(COMMON_PATH)/BoardConfigCommon.mk
 
 # TWRP specific build flags
-TW_LOAD_VENDOR_MODULES := "adsp_loader_dlkm.ko asus_battery_charger_AI2202.ko ax88179_178a.ko dwc3-msm.ko focaltech_fts_3658u.ko leds-qpnp-vibrator-ldo.ko qcom-hv-haptics.ko qseecom-mod.ko qti_battery_charge_notify.ko qti_battery_charger.ko ssusb-redriver-nb7vpq904m.ko synaptics_dsx.ko texfat.ko tfs_linux.ko tntfs.ko usb_bam.ko usb_f_ccid.ko usb_f_cdev.ko usb_f_diag.ko usb_f_gsi.ko usb_f_qdss.ko"
 TW_NO_SCREEN_BLANK := true
 
 #

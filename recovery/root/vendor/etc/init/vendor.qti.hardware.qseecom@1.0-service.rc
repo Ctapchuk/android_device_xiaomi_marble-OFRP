@@ -5,7 +5,7 @@
 #
 #
 
-on property:hwservicemanager.ready=true
+on property:ro.crypto.state=encrypted && property:hwservicemanager.ready=true
     start qseecom-service
 
 service qseecom-service /system/bin/vendor.qti.hardware.qseecom@1.0-service

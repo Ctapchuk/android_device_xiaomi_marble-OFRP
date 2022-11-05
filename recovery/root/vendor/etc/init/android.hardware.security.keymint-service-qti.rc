@@ -2,7 +2,7 @@
 # All Rights Reserved.
 # Confidential and Proprietary - Qualcomm Technologies, Inc.
 
-on property:vendor.sys.listeners.registered=true
+on property:hwservicemanager.ready=true && property:vendor.sys.listeners.registered=true
     start keymint-qti
 
 service keymint-qti /system/bin/android.hardware.security.keymint-service-qti
