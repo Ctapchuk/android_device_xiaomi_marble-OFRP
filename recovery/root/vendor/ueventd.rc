@@ -1,4 +1,6 @@
-# Copyright (c) 2012-2015, 2017-2020, The Linux Foundation. All rights reserved.
+# Copyright (c) 2012-2015, 2017-2021, The Linux Foundation. All rights reserved.
+#
+# Copyright (c) 2022 Qualcomm Innovation Center, Inc. All rights reserved.
 #
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted provided that the following conditions are met:
@@ -30,6 +32,14 @@
 # be added to search path for firmware loading
 firmware_directories /vendor/firmware_mnt/image/
 
+subsystem dma_heap
+    devname uevent_devpath
+    dirname /dev/dma_heap
+
+subsystem mem_buf_vm
+    devname uevent_devpath
+    dirname /dev/mem_buf_vm
+
 # the DIAG device node is not world writable/readable.
 /dev/diag                 0660   system     oem_2901
 /dev/mhi_*_pipe_4         0660   system     system
@@ -42,6 +52,8 @@ firmware_directories /vendor/firmware_mnt/image/
 /dev/kgsl-2d1             0666   root       root
 /dev/ion                  0664   system     system
 /dev/membuf               0664   system     system
+/dev/mem_buf_vm/*         0444   system     system
+/dev/dma_heap/qcom,*      0444   system     system
 /dev/rtc0                 0660   system     system
 /dev/smd0                 0660   system     system
 /dev/smd4                 0660   system     system
@@ -52,6 +64,7 @@ firmware_directories /vendor/firmware_mnt/image/
 /dev/ccid_bridge          0660   system     system
 /dev/ipa                  0660   radio      radio
 /dev/wwan_ioctl           0660   radio      radio
+/dev/ipa_lnx_stats_ioctl  0640   radio      radio
 /dev/ipaNatTable          0660   radio      radio
 /dev/rmnet_ctrl           0660   usb        usb
 /dev/dpl_ctrl             0660   usb        usb
@@ -160,6 +173,7 @@ firmware_directories /vendor/firmware_mnt/image/
 /dev/adsprpc-smd-secure   0644   system     system
 /dev/system_health_monitor 0644  radio      system
 /dev/mdss_rotator         0664   system     system
+/dev/spec_sync            0660   system     system
 
 #QDSS
 /dev/byte-cntr            0660   system    oem_2902
@@ -173,6 +187,8 @@ firmware_directories /vendor/firmware_mnt/image/
 #qvr
 /dev/qvr_external_sensor_ioctl      0660  system  system
 /sys/kernel/qvr_external_sensor/fd  0660  system  system
+/dev/bus/usb/*                      0660  root    usb
+/dev/hidraw*                        0660  root    usb
 
 # wlan
 /dev/wcnss_wlan           0660   system     system
@@ -225,6 +241,9 @@ firmware_directories /vendor/firmware_mnt/image/
 /dev/msm_preproc_ctl      0660   system     audio
 /dev/msm_rtac             0660   system     audio
 /dev/msm_voicememo        0660   system     audio
+/dev/aud_pasthru_adsp     0660   system     audio
+/dev/msm_audio_ion_cma    0660   system     audio
+/dev/msm_audio_ion        0660   system     audio
 /dev/ttyHSL1              0660   system     system
 /dev/ttyHS1               0660   system     system
 /dev/mdm                  0660   system     radio
@@ -235,6 +254,7 @@ firmware_directories /vendor/firmware_mnt/image/
 /dev/i2c-5                0660   media       media
 /dev/avtimer              0660   system     audio
 /dev/spidev2.0            0660   system     audio
+/dev/msm_adsp_sleepmon    0660   system     audio
 
 # DVB devices
 /dev/dvb/adapter0/demux*  0440   media       media
@@ -309,8 +329,9 @@ firmware_directories /vendor/firmware_mnt/image/
 
 #nfc permissions
 /dev/nfc-nci              0660    nfc         nfc
-/dev/nq-nci               0660    nfc         nfc
 /dev/assd                 0660    nfc         nfc
+/dev/pn553                0660    nfc         nfc
+/dev/p73                  0660    secure_element secure_element
 
 # UIO devices
 /dev/uio0                 0660   system     system
@@ -319,6 +340,9 @@ firmware_directories /vendor/firmware_mnt/image/
 
 # SSR devices
 /dev/subsys_*         0640   system     system
+
+# remoteproc devices
+/dev/remoteproc*      0640   system     system
 
 # Ultrasound device
 /dev/usf1                 0660   system     system
@@ -330,6 +354,8 @@ firmware_directories /vendor/firmware_mnt/image/
 /dev/qbt*                 0660   system     system
 /sys/class/fts/touch_aoi aoi_set 0660 root system
 /sys/class/fts/touch_aoi power_set 0660 root system
+
+/dev/goodix_fp            0766   system     root
 
 #ImproveTouch device
 /dev/hbtp_input           0660   system     system
@@ -345,6 +371,8 @@ firmware_directories /vendor/firmware_mnt/image/
 /dev/block/platform/soc/7c4000.sdhci/by-name/frp        0600   system     system
 /dev/block/platform/soc/4744000.sdhci/by-name/frp       0600   system     system
 /dev/block/platform/soc/4804000.ufshc/by-name/frp       0600   system     system
+/dev/block/platform/soc/7c4000.sdhci/by-name/rawdump       0660   root     system
+/dev/block/platform/soc/1d84000.ufshc/by-name/rawdump       0660   root     system
 
 # This is temporary while using SD card for initial bring-up
 /dev/block/platform/soc/8804000.sdhci/by-name/frp       0600   system     system
@@ -378,6 +406,9 @@ firmware_directories /vendor/firmware_mnt/image/
 /sys/devices/system/memory/memory* state    0660 system system
 
 /sys/devices/virtual/hdcp/msm_hdcp  min_level_change 0664    system  graphics
+
+#KGSL
+/sys/class/kgsl/kgsl-3d0    perfcounter              0660    root    shell
 
 # sys-fs display
 /sys/class/graphics/fb*     hpd                      0664    system  graphics
@@ -472,3 +503,6 @@ firmware_directories /vendor/firmware_mnt/image/
 /sys/devices/platform/soc/*.i2c/i2c-*/*-*/iio:device*   in_temp_raw                     0664    system  system
 /sys/devices/platform/soc/*.i2c/i2c-*/*-*/iio:device*   in_temp_scale                   0664    system  system
 /sys/devices/platform/soc/*.i2c/i2c-*/*-*/iio:device*   in_temp_scale_available         0664    system  system
+
+# devcoredump data attributes
+/sys/class/devcoredump/devcd*                           data                            0600    system  system
