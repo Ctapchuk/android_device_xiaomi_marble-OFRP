@@ -1,0 +1,18 @@
+#  @file    vendor.qti.hardware.perf-hal-service.rc
+#  @brief   Defination perf service
+#
+#  DESCRIPTION
+#  ---------------------------------------------------------------------------
+#       Copyright (c) 2019-2021 Qualcomm Technologies, Inc.
+#       All Rights Reserved.
+#       Confidential and Proprietary - Qualcomm Technologies, Inc.
+#  ---------------------------------------------------------------------------
+on boot
+    start perf-hal-2-3
+
+service perf-hal-2-3 /system/bin/vendor.qti.hardware.perf-hal-service
+    user root
+    group root
+    setenv LD_LIBRARY_PATH /vendor/lib64:/vendor/lib:/system/lib64:/system/lib:/sbin
+    disabled
+    seclabel u:r:recovery:s0

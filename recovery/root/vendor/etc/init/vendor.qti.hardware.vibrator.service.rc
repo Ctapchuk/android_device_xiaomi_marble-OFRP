@@ -1,9 +1,15 @@
+on post-fs
+    chown system system /sys/class/leds/vibrator/mem_play
+    chown system system /sys/class/leds/vibrator/gain
+    chown system system /sys/class/leds/vibrator/index
+    chown system system /sys/class/leds/vibrator/duration
+    chown system system /sys/class/leds/vibrator/activate
+    write /sys/class/leds/vibrator/trigger "transient"
+    start vendor.qti.vibrator
+
 service vendor.qti.vibrator /system/bin/vendor.qti.hardware.vibrator.service
     user root
     group root
     setenv LD_LIBRARY_PATH /vendor/lib64:/vendor/lib:/system/lib64:/system/lib:/sbin
     disabled
     seclabel u:r:recovery:s0
-
-on late-init
-    write /sys/class/leds/vibrator/trigger "transient"

@@ -1,5 +1,8 @@
-on boot
-    start usbgadget-hal-1-1
+#on boot
+#    wait /sys/class/udc/${sys.usb.controller}
+#    wait /config/usb_gadget/g1/UDC
+#    write /config/usb_gadget/g1/UDC ${sys.usb.controller}
+#    start usbgadget-hal-1-1
 
 service usbgadget-hal-1-1 /system/bin/android.hardware.usb.gadget@1.1-service-qti
     user root

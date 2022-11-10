@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--
+/* Copyright (c) 2021 Qualcomm Technologies, Inc.
+ * All Rights Reserved.
+ * Confidential and Proprietary - Qualcomm Technologies, Inc.
+ */
+-->
+
+<ResourceConfigs>
+    <PerfResources>
+        <SysNode Idx="0x0" Node="/sys/module/msm_performance/parameters/num_clusters" />
+        <SysNode Idx="0x1" Node="/sys/module/msm_performance/parameters/managed_cpus" />
+        <SysNode Idx="0x2" Node="/sys/module/msm_performance/parameters/cpu_max_freq" />
+        <SysNode Idx="0x3" Node="/sys/module/msm_performance/events/cpu_hotplug" />
+        <SysNode Idx="0x4" Node="/sys/module/msm_performance/parameters/max_cpus" />
+        <SysNode Idx="0x5" Node="/sys/module/msm_performance/parameters/inst" />
+        <SysNode Idx="0x6" Node="/sys/module/msm_performance/parameters/splh_notif" />
+        <SysNode Idx="0x7" Node="/sys/module/msm_performance/notify/gfx_evt" />
+        <SysNode Idx="0x8" Node="/sys/module/msm_performance/parameters/evnt_gplaf_pid" />
+        <SysNode Idx="0x9" Node="/proc/meminfo" />
+        <SysNode Idx="0xA" Node="/proc/sys/vm/compaction_proactiveness" />
+        <SysNode Idx="0xB" Node="/sys/module/msm_performance/notify/aggr_big_nr" />
+        <SysNode Idx="0xC" Node="/sys/module/msm_performance/notify/aggr_top_load" />
+        <SysNode Idx="0xD" Node="/sys/module/msm_performance/parameters/core_ctl_register" />
+        <SysNode Idx="0xE" Node="/sys/module/msm_performance/notify/top_load_cluster" />
+        <SysNode Idx="0xF" Node="/sys/module/msm_performance/notify/curr_cap_cluster" />
+        <SysNode Idx="0x10" Node="/sys/class/kgsl/kgsl-3d0/gpu_available_frequencies" />
+        <SysNode Idx="0x11" Node="/sys/class/kgsl/kgsl-3d0/gpu_clock_stats" />
+        <SysNode Idx="0x12" Node="/sys/class/kgsl/kgsl-3d0/gpuclk" />
+        <SysNode Idx="0x13" Node="/sys/class/kgsl/kgsl-3d0/gpu_busy_percentage" />
+        <SysNode Idx="0x14" Node="/sys/class/drm/sde-crtc-0/measured_fps" />
+        <SysNode Idx="0x15" Node="/sys/class/drm/sde-crtc-0/fps_periodicity_ms" />
+        <SysNode Idx="0x16" Node="/sys/class/drm/sde-crtc-0/retire_frame_event" />
+        <SysNode Idx="0x17" Node="/sys/kernel/msm_performance/parameters/lplh_notif" />
+        <SysNode Idx="0x18" Node="/sys/kernel/msm_performance/parameters/gplaf_notify" />
+        <SysNode Idx="0x19" Node="/sys/kernel/msm_performance/parameters/gplaf_data_node" />
+        <SysNode Idx="0x1A" Node="/sys/kernel/msm_performance/parameters/gplaf_health" />
+        <SysNode Idx="0x1B" Node="/sys/kernel/msm_performance/parameters/dplh_notif" />
+        <!-- Please add any new Node into the configs/test/avcsysnodesconfigs.xml as well which is used for testing -->
+    </PerfResources>
+</ResourceConfigs>
