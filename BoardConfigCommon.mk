@@ -23,9 +23,6 @@
 # *not* include it on all devices, so it is safe even with hardware-specific
 # components.
 
-# Copy TWRP ramdisk files automatically
-TARGET_RECOVERY_DEVICE_DIRS := $(COMMON_PATH)
-
 # SDK
 BOARD_SYSTEMSDK_VERSIONS := 31
 
