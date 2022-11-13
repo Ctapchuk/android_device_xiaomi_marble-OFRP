@@ -6,8 +6,9 @@
 # Userdata/Metadata partitions
 /metadata       ext4    /dev/block/by-name/metadata                                         flags=display=Metadata
 
-# Boot partitions
+# Other partitions
 /boot           emmc    /dev/block/bootdevice/by-name/boot                                  flags=slotselect
+/recovery       emmc    /dev/block/bootdevice/by-name/recovery                              flags=slotselect;display="Recovery";backup=1;flashimg=1
 /vendor_boot    emmc    /dev/block/bootdevice/by-name/vendor_boot                           flags=slotselect;display="Vendor Boot";backup=1;flashimg=1
 
 # AVB partitions
