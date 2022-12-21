@@ -145,6 +145,7 @@ TW_CUSTOM_CPU_TEMP_PATH := "/sys/devices/virtual/thermal/thermal_zone39/temp"
 TW_BRIGHTNESS_PATH := "/sys/devices/platform/soc/ae00000.qcom\x2cmdss_mdp/backlight/panel0-backlight/brightness"
 TW_DEFAULT_BRIGHTNESS := 420
 TW_QCOM_ATS_OFFSET := 1666528204500
+TW_EXCLUDE_APEX := true
 TW_EXCLUDE_DEFAULT_USB_INIT := true
 TW_EXTRA_LANGUAGES := true
 TW_INCLUDE_CRYPTO := true
