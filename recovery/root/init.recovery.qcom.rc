@@ -50,3 +50,8 @@ on post-fs-data
     restorecon_recursive /batinfo
 # --- ASUS_BSP : add for asus battery safety upgrade and health partition
 
+on property:dev.mnt.blk.firmware=*
+    # Load ADSP firmware for PMIC
+    wait /sys/kernel/boot_adsp/boot
+    write /sys/kernel/boot_adsp/boot 1
+    wait /sys/class/power_supply/battery
