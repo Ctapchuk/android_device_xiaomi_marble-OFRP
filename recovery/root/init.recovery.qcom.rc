@@ -54,7 +54,7 @@ on property:dev.mnt.blk.firmware=*
     wait /sys/class/power_supply/battery
     start health-hal-2-1
 
-on property:ro.boot.fastboot=1
+on property:ro.twrp.fastbootd=1
     # Load ADSP firmware for PMIC
     wait /sys/kernel/boot_adsp/boot
     write /sys/kernel/boot_adsp/boot 1
