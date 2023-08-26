@@ -139,6 +139,7 @@ TARGET_VENDOR_PROP += $(COMMON_PATH)/vendor.prop
 TARGET_RECOVERY_QCOM_RTC_FIX := true
 TARGET_RECOVERY_PIXEL_FORMAT := RGBX_8888
 TW_THEME := portrait_hdpi
+TW_STATUS_ICONS_ALIGN := center
 TW_CUSTOM_CPU_TEMP_PATH := "/sys/devices/virtual/thermal/thermal_zone39/temp"
 TW_BRIGHTNESS_PATH := "/sys/devices/platform/soc/ae00000.qcom\x2cmdss_mdp/backlight/panel0-backlight/brightness"
 TW_DEFAULT_BRIGHTNESS := 420
@@ -187,11 +188,11 @@ endif
 
 # Custom TWRP Versioning
 ifneq ($(wildcard device/common/version-info/.),)
-    # Uncomment the below line to use custom device version
-    include device/common/version-info/custom_twrp_version.mk
-
     # version prefix is optional - the default value is "LOCAL" if nothing is set in device tree
     CUSTOM_TWRP_VERSION_PREFIX := CPTB
+
+    # Uncomment the below line to use custom device version
+    include device/common/version-info/custom_twrp_version.mk
 
     ifeq ($(CUSTOM_TWRP_VERSION),)
         CUSTOM_TWRP_VERSION := $(shell date +%Y%m%d)-01
