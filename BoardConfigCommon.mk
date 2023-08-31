@@ -168,7 +168,7 @@ RECOVERY_LIBRARY_SOURCE_FILES += \
     $(TARGET_OUT_SHARED_LIBRARIES)/libdebuggerd_client.so \
     $(TARGET_OUT_SYSTEM_EXT_SHARED_LIBRARIES)/vendor.display.config@1.0.so \
     $(TARGET_OUT_SYSTEM_EXT_SHARED_LIBRARIES)/vendor.display.config@2.0.so
-TW_LOAD_VENDOR_MODULES := "adsp_loader_dlkm.ko rproc_qcom_common.ko q6_dlkm.ko qcom_q6v5.ko qcom_q6v5_pas.ko qcom_esoc.ko qcom_sysmon.ko goodix_core.ko goodix_fod.ko goodix_health.ko goodix_3626.ko focaltech_fts.ko fts_touch_spi.ko aw882xx_dlkm.ko leds-qpnp-vibrator-ldo.ko qcom-hv-haptics.ko qti_battery_charger.ko xiaomi_touch.ko hwmon.ko"
+TW_LOAD_VENDOR_MODULES := "adsp_loader_dlkm.ko goodix_core.ko"
 TW_LOAD_VENDOR_MODULES_EXCLUDE_GKI := true
 
 # TWRP Debug Flags
