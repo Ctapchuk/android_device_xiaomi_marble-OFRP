@@ -51,7 +51,7 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/virtual_ab_ota.mk)
 # A/B updater updatable partitions list. Keep in sync with the partition list
 # with "_a" and "_b" variants in the device. Note that the vendor can add more
 # more partitions to this list for the bootloader and radio.
-AB_OTA_PARTITIONS ?= boot vendor_boot recovery vendor vendor_dlkm odm dtbo vbmeta
+AB_OTA_PARTITIONS ?= boot vendor_boot recovery vendor_dlkm dtbo vbmeta super
 
 # A/B related packages
 PRODUCT_PACKAGES += update_engine \
@@ -89,11 +89,6 @@ PRODUCT_SHIPPING_API_LEVEL := 31
 #Support to compile recovery without msm headers
 TARGET_HAS_GENERIC_KERNEL_HEADERS := true
 
-# tell update_engine to not change dynamic partition table during updates
-# needed since our qti_dynamic_partitions does not include
-# vendor and odm and we also dont want to AB update them
-TARGET_ENFORCE_AB_OTA_PARTITION_LIST := true
-
 # Dynamic partitions
 PRODUCT_USE_DYNAMIC_PARTITIONS := true
 
@@ -123,6 +118,7 @@ SOONG_CONFIG_ufsbsg_ufsframework := bsg
 PRODUCT_EXTRA_RECOVERY_KEYS += \
     $(COMMON_PATH)/security/otacert
 
+
 # System AVB
 BOARD_AVB_VBMETA_SYSTEM := system
 BOARD_AVB_VBMETA_SYSTEM_KEY_PATH := external/avb/test/data/testkey_rsa2048.pem
@@ -133,3 +129,4 @@ BOARD_AVB_VBMETA_SYSTEM_ROLLBACK_INDEX_LOCATION := 2
 # Enable Fuse Passthrough
 PRODUCT_PROPERTY_OVERRIDES += persist.sys.fuse.passthrough.enable=true
 
+TARGET_RECOVERY_DEVICE_DIRS += $(COMMON_PATH)/twrp

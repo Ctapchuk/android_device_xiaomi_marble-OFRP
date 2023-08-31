@@ -65,23 +65,24 @@ TARGET_USERIMAGES_USE_EXT4 := true
 TARGET_USERIMAGES_USE_F2FS := true
 BOARD_SYSTEMIMAGE_FILE_SYSTEM_TYPE := ext4
 BOARD_USERDATAIMAGE_FILE_SYSTEM_TYPE := f2fs
-BOARD_BOOTIMAGE_PARTITION_SIZE := 0x06000000
+BOARD_BOOTIMAGE_PARTITION_SIZE := 201326592
 BOARD_KERNEL-GKI_BOOTIMAGE_PARTITION_SIZE := $(BOARD_BOOTIMAGE_PARTITION_SIZE)
-BOARD_VENDOR_BOOTIMAGE_PARTITION_SIZE := 0x06000000
-BOARD_USERDATAIMAGE_PARTITION_SIZE := 48318382080
-BOARD_PERSISTIMAGE_PARTITION_SIZE := 33554432
+BOARD_VENDOR_BOOTIMAGE_PARTITION_SIZE := 100663296
+BOARD_USERDATAIMAGE_PARTITION_SIZE := 15032385536
+BOARD_PERSISTIMAGE_PARTITION_SIZE := 67108864
 BOARD_PERSISTIMAGE_FILE_SYSTEM_TYPE := ext4
 BOARD_METADATAIMAGE_PARTITION_SIZE := 16777216
-BOARD_DTBOIMG_PARTITION_SIZE := 0x1700000
+BOARD_DTBOIMG_PARTITION_SIZE := 25165824
 BOARD_VENDORIMAGE_FILE_SYSTEM_TYPE := ext4
 BOARD_FLASH_BLOCK_SIZE := 262144 # (BOARD_KERNEL_PAGESIZE * 64)
 
 # Dynamic/Logical Partitions
-BOARD_SUPER_PARTITION_SIZE := 6442450944
+BOARD_SUPER_PARTITION_SIZE := 9126805504
 BOARD_SUPER_PARTITION_GROUPS := qti_dynamic_partitions
-BOARD_QTI_DYNAMIC_PARTITIONS_SIZE := 6438256640 # BOARD_SUPER_PARTITION_SIZE - 4MB
-BOARD_QTI_DYNAMIC_PARTITIONS_PARTITION_LIST := vendor vendor_dlkm odm
-BOARD_RECOVERYIMAGE_PARTITION_SIZE := 0x06400000
+BOARD_QTI_DYNAMIC_PARTITIONS_SIZE := 9122611200 # BOARD_SUPER_PARTITION_SIZE - 4MB
+BOARD_QTI_DYNAMIC_PARTITIONS_PARTITION_LIST := system system_ext product vendor vendor_dlkm odm
+
+BOARD_RECOVERYIMAGE_PARTITION_SIZE := 104857600
 
 # Workaround for error copying vendor files to recovery ramdisk
 TARGET_COPY_OUT_VENDOR := vendor
@@ -109,7 +110,8 @@ TARGET_RECOVERY_DEVICE_MODULES += \
     libion \
     libnetutils \
     vendor.display.config@1.0 \
-    vendor.display.config@2.0
+    vendor.display.config@2.0 \
+    libdebuggerd_client
 TARGET_RECOVERY_FSTAB := $(COMMON_PATH)/recovery.fstab
 
 # Use mke2fs to create ext4 images
@@ -121,7 +123,7 @@ BOARD_AVB_RECOVERY_KEY_PATH := external/avb/test/data/testkey_rsa4096.pem
 BOARD_AVB_RECOVERY_ALGORITHM := SHA256_RSA4096
 BOARD_AVB_RECOVERY_ROLLBACK_INDEX := 1
 BOARD_AVB_RECOVERY_ROLLBACK_INDEX_LOCATION := 1
-    
+
 # Encryption
 BOARD_USES_METADATA_PARTITION := true
 BOARD_USES_QCOM_FBE_DECRYPTION := true
@@ -131,7 +133,6 @@ PLATFORM_SECURITY_PATCH := 2099-12-31
 VENDOR_SECURITY_PATCH := $(PLATFORM_SECURITY_PATCH)
 
 # Extras
-BOARD_ROOT_EXTRA_FOLDERS := batinfo
 TARGET_SYSTEM_PROP += $(COMMON_PATH)/system.prop
 TARGET_VENDOR_PROP += $(COMMON_PATH)/vendor.prop
 
@@ -139,9 +140,12 @@ TARGET_VENDOR_PROP += $(COMMON_PATH)/vendor.prop
 TARGET_RECOVERY_QCOM_RTC_FIX := true
 TARGET_RECOVERY_PIXEL_FORMAT := RGBX_8888
 TW_THEME := portrait_hdpi
-TW_STATUS_ICONS_ALIGN := center
-TW_CUSTOM_CPU_TEMP_PATH := "/sys/devices/virtual/thermal/thermal_zone39/temp"
+TW_CUSTOM_CPU_TEMP_PATH := "/sys/devices/virtual/thermal/thermal_zone34/temp"
 TW_BRIGHTNESS_PATH := "/sys/devices/platform/soc/ae00000.qcom\x2cmdss_mdp/backlight/panel0-backlight/brightness"
+TW_STATUS_ICONS_ALIGN := center
+TW_CUSTOM_CPU_POS := "50"
+TW_CUSTOM_CLOCK_POS := "290"
+TW_CUSTOM_BATTERY_POS := "800"
 TW_DEFAULT_BRIGHTNESS := 420
 TW_QCOM_ATS_OFFSET := 1666528204500
 TW_EXCLUDE_APEX := true
@@ -152,7 +156,8 @@ TW_NO_EXFAT_FUSE := true
 TW_INCLUDE_RESETPROP := true
 TW_USE_SERIALNO_PROPERTY_FOR_DEVICE_ID := true
 TW_OVERRIDE_SYSTEM_PROPS := \
-    "ro.build.date.utc;ro.bootimage.build.date.utc=ro.build.date.utc;ro.odm.build.date.utc=ro.build.date.utc;ro.product.build.date.utc=ro.build.date.utc;ro.system.build.date.utc=ro.build.date.utc;ro.system_ext.build.date.utc=ro.build.date.utc;ro.vendor.build.date.utc=ro.build.date.utc;ro.build.product;ro.build.fingerprint=ro.system.build.fingerprint;ro.build.version.incremental;ro.product.device=ro.product.system.device;ro.product.model=ro.product.system.model;ro.product.name=ro.product.system.name"
+    "ro.build.date.utc;ro.bootimage.build.date.utc=ro.build.date.utc;ro.odm.build.date.utc=ro.build.date.utc;ro.product.build.date.utc=ro.build.date.utc;ro.system.build.date.utc=ro.build.date.utc;ro.system_ext.build.date.utc=ro.build.date.utc;ro.vendor.build.date.utc=ro.build.date.utc;ro.build.product;ro.build.fingerprint=ro.vendor.build.fingerprint;ro.build.version.incremental;ro.product.device=ro.product.vendor.device;ro.product.model=ro.product.vendor.model;ro.product.name=ro.product.vendor.name"
+TW_OVERRIDE_PROPS_ADDITIONAL_PARTITIONS := vendor
 RECOVERY_LIBRARY_SOURCE_FILES += \
     $(TARGET_OUT_SHARED_LIBRARIES)/android.hidl.allocator@1.0.so \
     $(TARGET_OUT_SHARED_LIBRARIES)/android.hidl.memory@1.0.so \
@@ -161,9 +166,10 @@ RECOVERY_LIBRARY_SOURCE_FILES += \
     $(TARGET_OUT_SHARED_LIBRARIES)/libhidlmemory.so \
     $(TARGET_OUT_SHARED_LIBRARIES)/libion.so \
     $(TARGET_OUT_SHARED_LIBRARIES)/libnetutils.so \
+    $(TARGET_OUT_SHARED_LIBRARIES)/libdebuggerd_client.so \
     $(TARGET_OUT_SYSTEM_EXT_SHARED_LIBRARIES)/vendor.display.config@1.0.so \
     $(TARGET_OUT_SYSTEM_EXT_SHARED_LIBRARIES)/vendor.display.config@2.0.so
-TW_LOAD_VENDOR_MODULES := "adsp_loader_dlkm.ko rproc_qcom_common.ko q6_dlkm.ko qcom_q6v5.ko qcom_q6v5_pas.ko qcom_esoc.ko qcom_sysmon.ko tntfs.ko"
+TW_LOAD_VENDOR_MODULES := "adsp_loader_dlkm.ko rproc_qcom_common.ko q6_dlkm.ko qcom_q6v5.ko qcom_q6v5_pas.ko qcom_esoc.ko qcom_sysmon.ko goodix_core.ko goodix_fod.ko goodix_health.ko goodix_3626.ko focaltech_fts.ko aw882xx_dlkm.ko leds-qpnp-vibrator-ldo.ko qcom-hv-haptics.ko qti_battery_charger.ko xiaomi_touch.ko hwmon.ko"
 TW_LOAD_VENDOR_MODULES_EXCLUDE_GKI := true
 
 # TWRP Debug Flags
@@ -185,19 +191,5 @@ ifneq ($(wildcard bootable/recovery/installer/.),)
     USE_RECOVERY_INSTALLER := true
     RECOVERY_INSTALLER_PATH := bootable/recovery/installer
 endif
-
-# Custom TWRP Versioning
-ifneq ($(wildcard device/common/version-info/.),)
-    # version prefix is optional - the default value is "LOCAL" if nothing is set in device tree
-    CUSTOM_TWRP_VERSION_PREFIX := CPTB
-
-    # Uncomment the below line to use custom device version
-    include device/common/version-info/custom_twrp_version.mk
-
-    ifeq ($(CUSTOM_TWRP_VERSION),)
-        CUSTOM_TWRP_VERSION := $(shell date +%Y%m%d)-01
-    endif
-endif
-#
 # end local build flags
 #
