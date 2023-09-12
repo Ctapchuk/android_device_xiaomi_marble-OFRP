@@ -27,6 +27,13 @@
 
 import /init.recovery.qcom_decrypt.rc
 
+service overrideprops /system/bin/overrideprops.sh
+    user root
+    group root
+    disabled
+    oneshot
+    seclabel u:r:recovery:s0
+
 on init
     start boot-hal-1-2
 
@@ -37,6 +44,7 @@ on fs
 
 on boot
     setprop sys.usb.config adb
+    start overrideprops
 
 on property:twrp.modules.loaded=true
     start touch_report

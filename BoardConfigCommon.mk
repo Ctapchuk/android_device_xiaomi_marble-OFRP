@@ -156,7 +156,7 @@ TW_NO_EXFAT_FUSE := true
 TW_INCLUDE_RESETPROP := true
 TW_USE_SERIALNO_PROPERTY_FOR_DEVICE_ID := true
 TW_OVERRIDE_SYSTEM_PROPS := \
-    "ro.build.date.utc;ro.bootimage.build.date.utc=ro.build.date.utc;ro.odm.build.date.utc=ro.build.date.utc;ro.product.build.date.utc=ro.build.date.utc;ro.system.build.date.utc=ro.build.date.utc;ro.system_ext.build.date.utc=ro.build.date.utc;ro.vendor.build.date.utc=ro.build.date.utc;ro.build.product;ro.build.fingerprint=ro.vendor.build.fingerprint;ro.build.version.incremental;ro.product.device=ro.product.vendor.device;ro.product.model=ro.product.vendor.model;ro.product.name=ro.product.vendor.name"
+    "ro.build.product;ro.build.fingerprint=ro.vendor.build.fingerprint;ro.build.version.incremental;ro.product.device=ro.product.vendor.device;ro.product.model=ro.product.vendor.model;ro.product.name=ro.product.vendor.name"
 TW_OVERRIDE_PROPS_ADDITIONAL_PARTITIONS := vendor
 RECOVERY_LIBRARY_SOURCE_FILES += \
     $(TARGET_OUT_SHARED_LIBRARIES)/android.hidl.allocator@1.0.so \
