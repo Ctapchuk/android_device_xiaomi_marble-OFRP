@@ -1,0 +1,338 @@
+sdpm_clk.ko:
+debug-regulator.ko:
+qcom_pm8008-regulator.ko: debug-regulator.ko
+synaptics_dsx.ko: panel_event_notifier.ko
+clk-dummy.ko: clk-qcom.ko gdsc-regulator.ko proxy-consumer.ko debug-regulator.ko
+hyp_core_ctl.ko: gh_rm_drv.ko gh_dbl.ko gh_msgq.ko gh_arm_drv.ko thermal_pause.ko sched-walt.ko metis.ko mi_schedule.ko qcom-cpufreq-hw.ko
+repeater.ko:
+bootinfo.ko:
+soc_sleep_stats.ko: mi_power.ko smem.ko
+goodix_core.ko: xiaomi_touch.ko sched-walt.ko metis.ko mi_schedule.ko qcom-cpufreq-hw.ko panel_event_notifier.ko
+llcc_perfmon.ko:
+phy-qcom-ufs-qmp-v4-lahaina.ko: phy-qcom-ufs.ko
+smp2p_sleepstate.ko:
+mi_freqwdg.ko:
+qcom_ipc_logging.ko: minidump.ko smem.ko
+mhi_dev_uci.ko: mhi_dev_dtr.ko mhi.ko pci-msm-drv.ko rproc_qcom_common.ko qcom_smd.ko qcom_glink_smem.ko qcom_glink.ko qcom_ipc_logging.ko minidump.ko smem.ko clk-qcom.ko gdsc-regulator.ko proxy-consumer.ko debug-regulator.ko
+qcom_dma_heaps.ko: msm_dma_iommu_mapping.ko mem_buf_dev.ko secure_buffer.ko qcom-scm.ko gh_rm_drv.ko gh_dbl.ko gh_msgq.ko gh_arm_drv.ko
+eud.ko: qcom-scm.ko
+stm_p_basic.ko: stm_core.ko
+qcom-dload-mode.ko: qcom-scm.ko minidump.ko smem.ko
+qce50.ko: sps_drv.ko qcom_ipc_logging.ko minidump.ko smem.ko
+lzo.ko:
+cpu_hotplug.ko:
+qcom_aoss.ko: qcom_ipc_logging.ko minidump.ko smem.ko
+lvstest.ko:
+qcom-reboot-reason.ko:
+coresight.ko:
+nt36xxx-spi.ko: panel_event_notifier.ko
+goodix_health.ko:
+qcom_tsens.ko: qcom_ipc_logging.ko minidump.ko smem.ko
+q6_notifier_dlkm.ko: q6_pdr_dlkm.ko pdr_interface.ko qmi_helpers.ko rproc_qcom_common.ko qcom_smd.ko qcom_glink_smem.ko qcom_glink.ko qcom_ipc_logging.ko minidump.ko smem.ko
+qcom-pdc.ko: qcom-scm.ko qcom_ipc_logging.ko minidump.ko smem.ko
+pm8941-pwrkey.ko: mtdoops.ko mtd.ko
+mhi_dev_dtr.ko: mhi.ko pci-msm-drv.ko rproc_qcom_common.ko qcom_smd.ko qcom_glink_smem.ko qcom_glink.ko qcom_ipc_logging.ko minidump.ko smem.ko clk-qcom.ko gdsc-regulator.ko proxy-consumer.ko debug-regulator.ko
+qrtr-mhi.ko: qrtr.ko mhi.ko pci-msm-drv.ko rproc_qcom_common.ko qcom_smd.ko qcom_glink_smem.ko qcom_glink.ko qcom_ipc_logging.ko minidump.ko smem.ko clk-qcom.ko gdsc-regulator.ko proxy-consumer.ko debug-regulator.ko
+qcom_cpuss_sleep_stats.ko: qcom-scm.ko
+phy-qcom-ufs-qmp-v4-cape.ko: phy-qcom-ufs.ko
+guestvm_loader.ko: mdt_loader.ko qcom-scm.ko gh_rm_drv.ko gh_dbl.ko gh_msgq.ko gh_arm_drv.ko
+leds-qpnp-vibrator-ldo.ko:
+qpnp-pbs.ko:
+clk-qcom.ko: gdsc-regulator.ko proxy-consumer.ko debug-regulator.ko
+coresight-dummy.ko: coresight.ko
+usb_f_gsi.ko: ipa_fmwk.ko dwc3-msm.ko ssusb-redriver-nb7vpq904m.ko ucsi_glink.ko pmic_glink.ko pdr_interface.ko qmi_helpers.ko rproc_qcom_common.ko qcom_smd.ko qcom_glink_smem.ko qcom_glink.ko qcom_ipc_logging.ko minidump.ko smem.ko clk-qcom.ko gdsc-regulator.ko proxy-consumer.ko debug-regulator.ko
+phy-qcom-ufs-qmp-14nm.ko: phy-qcom-ufs.ko
+bam_dma.ko: qcom_ipc_logging.ko minidump.ko smem.ko
+c1dcvs_vendor.ko:
+qfprom-sys.ko:
+usb_bam.ko: sps_drv.ko qcom_ipc_logging.ko minidump.ko smem.ko
+leds-qti-flash.ko: qti_battery_charger.ko pmic_glink.ko pdr_interface.ko qmi_helpers.ko rproc_qcom_common.ko qcom_smd.ko qcom_glink_smem.ko qcom_glink.ko qcom_ipc_logging.ko minidump.ko smem.ko panel_event_notifier.ko
+perf_helper.ko:
+hung_task_enh.ko:
+phy-qcom-ufs-qmp-v4-waipio.ko: phy-qcom-ufs.ko
+gh_dbl.ko:
+gh_ctrl.ko:
+icc-debug.ko:
+i3c-master-msm-geni.ko: pinctrl-msm.ko msm-geni-se.ko qcom-scm.ko qcom_ipc_logging.ko minidump.ko smem.ko
+qcom_ramdump.ko:
+qnoc-parrot.ko: qnoc-qos.ko icc-rpmh.ko icc-debug.ko icc-bcm-voter.ko qcom_rpmh.ko cmd-db.ko qcom_ipc_logging.ko minidump.ko smem.ko
+msm-mmrm.ko: clk-qcom.ko gdsc-regulator.ko proxy-consumer.ko debug-regulator.ko
+proxy-consumer.ko:
+msm_sysstats.ko: msm_kgsl.ko qcom_iommu_util.ko msm_performance.ko qcom-pmu-lib.ko qcom_llcc_pmu.ko llcc-qcom.ko qcom-dcvs.ko dcvs_fp.ko mem_buf_dev.ko secure_buffer.ko qcom_rpmh.ko cmd-db.ko mdt_loader.ko qcom-scm.ko qcom_ipc_logging.ko minidump.ko smem.ko clk-qcom.ko gdsc-regulator.ko proxy-consumer.ko gh_rm_drv.ko gh_dbl.ko gh_msgq.ko gh_arm_drv.ko sched-walt.ko metis.ko mi_schedule.ko qcom-cpufreq-hw.ko debug-regulator.ko
+stm_p_ost.ko: stm_core.ko
+msm_ext_display.ko:
+qcom_q6v5_pas.ko: qcom_ramdump.ko qcom_pil_info.ko qcom_q6v5.ko qcom_sysmon.ko qcom_aoss.ko qmi_helpers.ko mdt_loader.ko qcom-scm.ko rproc_qcom_common.ko qcom_smd.ko qcom_glink_smem.ko qcom_glink.ko qcom_ipc_logging.ko minidump.ko smem.ko
+cmd-db.ko:
+hwmon.ko:
+qseecom-mod.ko: mem_buf_dev.ko secure_buffer.ko qcom-scm.ko gh_rm_drv.ko gh_dbl.ko gh_msgq.ko gh_arm_drv.ko
+spi-msm-geni.ko: msm-geni-se.ko qcom_ipc_logging.ko minidump.ko smem.ko
+msm_rng.ko:
+swinfo.ko: minidump.ko smem.ko
+microdump_collector.ko: qcom_ramdump.ko rproc_qcom_common.ko qcom_smd.ko qcom_glink_smem.ko qcom_glink.ko qcom_ipc_logging.ko minidump.ko smem.ko
+qcom_cpu_vendor_hooks.ko:
+coresight-csr.ko: coresight.ko
+goodix_3626.ko: panel_event_notifier.ko
+minidump.ko: smem.ko
+qti_qmi_cdev.ko: qmi_helpers.ko
+gplaf_vendor.ko:
+altmode-glink.ko: pmic_glink.ko pdr_interface.ko qmi_helpers.ko rproc_qcom_common.ko qcom_smd.ko qcom_glink_smem.ko qcom_glink.ko qcom_ipc_logging.ko minidump.ko smem.ko
+coresight-tmc.ko: usb_f_qdss.ko usb_bam.ko sps_drv.ko coresight-csr.ko dwc3-msm.ko ssusb-redriver-nb7vpq904m.ko ucsi_glink.ko pmic_glink.ko pdr_interface.ko qmi_helpers.ko coresight.ko rproc_qcom_common.ko qcom_smd.ko qcom_glink_smem.ko qcom_glink.ko qcom_ipc_logging.ko minidump.ko smem.ko clk-qcom.ko gdsc-regulator.ko proxy-consumer.ko debug-regulator.ko
+rq_stats.ko:
+iommu-logger.ko:
+msm_geni_serial.ko: msm-geni-se.ko qcom_ipc_logging.ko minidump.ko smem.ko
+phy-msm-ssusb-qmp.ko:
+msm_kgsl.ko: qcom_iommu_util.ko msm_performance.ko qcom-pmu-lib.ko qcom_llcc_pmu.ko llcc-qcom.ko qcom-dcvs.ko dcvs_fp.ko mem_buf_dev.ko secure_buffer.ko qcom_rpmh.ko cmd-db.ko mdt_loader.ko qcom-scm.ko qcom_ipc_logging.ko minidump.ko smem.ko clk-qcom.ko gdsc-regulator.ko proxy-consumer.ko gh_rm_drv.ko gh_dbl.ko gh_msgq.ko gh_arm_drv.ko sched-walt.ko metis.ko mi_schedule.ko qcom-cpufreq-hw.ko debug-regulator.ko
+qcom-pmu-lib.ko: qcom_llcc_pmu.ko
+tmecom-intf.ko:
+reboot-mode.ko:
+hdcp_qseecom.ko: qseecom-mod.ko mem_buf_dev.ko secure_buffer.ko qcom-scm.ko gh_rm_drv.ko gh_dbl.ko gh_msgq.ko gh_arm_drv.ko
+mhi_dev_netdev.ko: mhi.ko pci-msm-drv.ko rproc_qcom_common.ko qcom_smd.ko qcom_glink_smem.ko qcom_glink.ko qcom_ipc_logging.ko minidump.ko smem.ko clk-qcom.ko gdsc-regulator.ko proxy-consumer.ko debug-regulator.ko
+qcom_lpm.ko: sched-walt.ko metis.ko mi_schedule.ko qcom-cpufreq-hw.ko
+focaltech_fts.ko: gh_mem_notifier.ko gh_irq_lend.ko pinctrl-msm.ko qcom-scm.ko gh_rm_drv.ko gh_dbl.ko gh_msgq.ko gh_arm_drv.ko panel_event_notifier.ko
+phy-qcom-ufs-qmp-v4-parrot.ko: phy-qcom-ufs.ko
+gpr_dlkm.ko: snd_event_dlkm.ko q6_notifier_dlkm.ko q6_pdr_dlkm.ko pdr_interface.ko qmi_helpers.ko rproc_qcom_common.ko qcom_smd.ko qcom_glink_smem.ko qcom_glink.ko qcom_ipc_logging.ko minidump.ko smem.ko
+asix.ko:
+gcc-waipio.ko: clk-dummy.ko clk-qcom.ko gdsc-regulator.ko proxy-consumer.ko debug-regulator.ko
+qcom-cpufreq-hw.ko:
+msm_performance.ko: qcom-pmu-lib.ko qcom_llcc_pmu.ko sched-walt.ko metis.ko mi_schedule.ko qcom-cpufreq-hw.ko
+qcom_glink_smem.ko: qcom_glink.ko qcom_ipc_logging.ko minidump.ko smem.ko
+cdsprm.ko:
+phy-qcom-ufs-qmp-v4-anarok.ko: phy-qcom-ufs.ko
+rpmh-regulator.ko: qcom_rpmh.ko cmd-db.ko qcom_ipc_logging.ko minidump.ko smem.ko proxy-consumer.ko debug-regulator.ko
+qcom_glink.ko: qcom_ipc_logging.ko minidump.ko smem.ko
+mhi.ko: pci-msm-drv.ko rproc_qcom_common.ko qcom_smd.ko qcom_glink_smem.ko qcom_glink.ko qcom_ipc_logging.ko minidump.ko smem.ko clk-qcom.ko gdsc-regulator.ko proxy-consumer.ko debug-regulator.ko
+mtdoops.ko: mtd.ko
+qcom-scm.ko:
+qcom_smd.ko: smem.ko
+icc-test.ko:
+mi_log.ko:
+dispcc-waipio.ko: clk-qcom.ko gdsc-regulator.ko proxy-consumer.ko debug-regulator.ko
+qmi_helpers.ko:
+ehset.ko:
+sensors_ssc.ko:
+qcedev-mod.ko: qce50.ko sps_drv.ko mem_buf_dev.ko secure_buffer.ko qcom-scm.ko qcom_ipc_logging.ko minidump.ko smem.ko gh_rm_drv.ko gh_dbl.ko gh_msgq.ko gh_arm_drv.ko
+msm_dma_iommu_mapping.ko:
+frpc-adsprpc.ko: qcom_ramdump.ko mem_buf_dev.ko secure_buffer.ko pdr_interface.ko qmi_helpers.ko qcom-scm.ko rproc_qcom_common.ko qcom_smd.ko qcom_glink_smem.ko qcom_glink.ko qcom_ipc_logging.ko minidump.ko smem.ko gh_rm_drv.ko gh_dbl.ko gh_msgq.ko gh_arm_drv.ko
+qbt_handler.ko:
+pinctrl-diwali.ko: pinctrl-msm.ko qcom-scm.ko
+qcom-pon.ko: reboot-mode.ko
+qcom_wdt_core.ko: qcom-scm.ko minidump.ko smem.ko
+lt9611uxc.ko:
+mdt_loader.ko: qcom-scm.ko
+qti_devfreq_cdev.ko:
+gh_irq_lend.ko: gh_rm_drv.ko gh_dbl.ko gh_msgq.ko gh_arm_drv.ko
+q6_pdr_dlkm.ko: pdr_interface.ko qmi_helpers.ko
+nfc_i2c.ko: qcom_ipc_logging.ko minidump.ko smem.ko
+coresight-replicator.ko: coresight.ko
+qcom_gic_intr_routing.ko:
+core_hang_detect.ko: qcom-scm.ko
+qnoc-qos.ko:
+qti-adc-tm.ko:
+usb_f_ccid.ko:
+gcc-diwali.ko: clk-qcom.ko gdsc-regulator.ko proxy-consumer.ko debug-regulator.ko
+qcom-dcvs.ko: dcvs_fp.ko qcom_rpmh.ko cmd-db.ko qcom_ipc_logging.ko minidump.ko smem.ko
+qti-regmap-debugfs.ko:
+gh_msgq.ko:
+rproc_qcom_common.ko: qcom_smd.ko qcom_glink_smem.ko qcom_glink.ko qcom_ipc_logging.ko minidump.ko smem.ko
+phy-msm-snps-eusb2.ko: repeater.ko qcom-scm.ko
+mem_buf.ko: qcom_dma_heaps.ko msm_dma_iommu_mapping.ko mem_buf_dev.ko secure_buffer.ko qcom-scm.ko gh_rm_drv.ko gh_dbl.ko gh_msgq.ko gh_arm_drv.ko
+phy-qcom-ufs-qmp-v3.ko: phy-qcom-ufs.ko
+bcl_pmic5.ko: qcom_ipc_logging.ko minidump.ko smem.ko
+rdbg.ko: smem.ko
+mtd_blkdevs.ko: mtd.ko
+gh_arm_drv.ko:
+xiaomifp.ko:
+c1dcvs_scmi.ko:
+heap_mem_ext_v01.ko: qmi_helpers.ko
+qcom_sysmon.ko: qmi_helpers.ko rproc_qcom_common.ko qcom_smd.ko qcom_glink_smem.ko qcom_glink.ko qcom_ipc_logging.ko minidump.ko smem.ko
+gh_virt_wdt.ko: qcom_wdt_core.ko qcom-scm.ko minidump.ko smem.ko
+ucsi_glink.ko: pmic_glink.ko pdr_interface.ko qmi_helpers.ko rproc_qcom_common.ko qcom_smd.ko qcom_glink_smem.ko qcom_glink.ko qcom_ipc_logging.ko minidump.ko smem.ko
+stm_core.ko:
+bwmon.ko: qcom-dcvs.ko dcvs_fp.ko qcom_rpmh.ko cmd-db.ko qcom_ipc_logging.ko minidump.ko smem.ko
+tz_log.ko: qcom-scm.ko
+xiaomi_touch.ko:
+qrtr.ko: qcom_ipc_logging.ko minidump.ko smem.ko
+gh_mem_notifier.ko: gh_rm_drv.ko gh_dbl.ko gh_msgq.ko gh_arm_drv.ko
+qcom_hwspinlock.ko:
+hwid.ko:
+boot_stats.ko:
+coresight-tpdm.ko: coresight.ko qcom-scm.ko
+plh_scmi.ko: msm_performance.ko qcom-pmu-lib.ko qcom_llcc_pmu.ko sched-walt.ko metis.ko mi_schedule.ko qcom-cpufreq-hw.ko
+coresight-tpda.ko: coresight.ko
+fsa4480-i2c.ko: qti-regmap-debugfs.ko ucsi_glink.ko pmic_glink.ko pdr_interface.ko qmi_helpers.ko rproc_qcom_common.ko qcom_smd.ko qcom_glink_smem.ko qcom_glink.ko qcom_ipc_logging.ko minidump.ko smem.ko
+mi_memory.ko: ufs_qcom.ko qcom-reboot-reason.ko ufshcd-crypto-qti.ko crypto-qti-common.ko crypto-qti-hwkm.ko hwkm.ko tmecom-intf.ko qcom-scm.ko qcom_ipc_logging.ko minidump.ko smem.ko clk-qcom.ko gdsc-regulator.ko proxy-consumer.ko phy-qcom-ufs.ko debug-regulator.ko
+xlogchar.ko:
+extend_reclaim.ko:
+ipa_fmwk.ko:
+i2c-msm-geni.ko: msm-geni-se.ko qcom_ipc_logging.ko minidump.ko smem.ko
+sys_pm_vx.ko: subsystem_sleep_stats.ko soc_sleep_stats.ko mi_power.ko smem.ko
+lzo-rle.ko:
+mi_schedule.ko:
+memory_dump_v2.ko: qcom-scm.ko minidump.ko smem.ko
+ofpart.ko: mtd.ko
+sg.ko:
+kryo_arm64_edac.ko:
+metis.ko: mi_schedule.ko
+qcom_iommu_util.ko:
+qsee_ipc_irq_bridge.ko: rproc_qcom_common.ko qcom_smd.ko qcom_glink_smem.ko qcom_glink.ko qcom_ipc_logging.ko minidump.ko smem.ko
+usb_f_cdev.ko:
+videocc-diwali.ko: clk-qcom.ko gdsc-regulator.ko proxy-consumer.ko debug-regulator.ko
+plh_vendor.ko:
+qti_amoled_ecm.ko: hwmon.ko panel_event_notifier.ko
+atmel_mxt_ts.ko: panel_event_notifier.ko
+panel_event_notifier.ko:
+mhi_cntrl_qcom.ko: qcom_esoc.ko qcom_sysmon.ko qmi_helpers.ko mhi.ko pci-msm-drv.ko rproc_qcom_common.ko qcom_smd.ko qcom_glink_smem.ko qcom_glink.ko qcom_ipc_logging.ko minidump.ko smem.ko clk-qcom.ko gdsc-regulator.ko proxy-consumer.ko debug-regulator.ko
+policy_engine.ko:
+camcc-diwali.ko: clk-qcom.ko gdsc-regulator.ko proxy-consumer.ko debug-regulator.ko
+charger-ulog-glink.ko: pmic_glink.ko pdr_interface.ko qmi_helpers.ko rproc_qcom_common.ko qcom_smd.ko qcom_glink_smem.ko qcom_glink.ko qcom_ipc_logging.ko minidump.ko smem.ko
+qcom-spmi-temp-alarm.ko:
+smem.ko:
+usb_f_diag.ko:
+btpower.ko:
+qcom-hv-haptics.ko: qpnp-pbs.ko qti_battery_charger.ko pmic_glink.ko pdr_interface.ko qmi_helpers.ko rproc_qcom_common.ko qcom_smd.ko qcom_glink_smem.ko qcom_glink.ko qcom_ipc_logging.ko minidump.ko smem.ko panel_event_notifier.ko
+pci-edma.ko: qcom_ipc_logging.ko minidump.ko smem.ko
+qcom_soc_wdt.ko: qcom_wdt_core.ko qcom-scm.ko minidump.ko smem.ko
+stm_ftrace.ko: stm_core.ko
+nt36xxx-i2c.ko: gh_mem_notifier.ko gh_irq_lend.ko pinctrl-msm.ko qcom-scm.ko gh_rm_drv.ko gh_dbl.ko gh_msgq.ko gh_arm_drv.ko panel_event_notifier.ko
+qnoc-waipio.ko: qnoc-qos.ko icc-rpmh.ko icc-debug.ko icc-bcm-voter.ko qcom_rpmh.ko cmd-db.ko qcom_ipc_logging.ko minidump.ko smem.ko
+qcom_ipc_lite.ko:
+mem-hooks.ko:
+rimps_log.ko: qcom_ipc_logging.ko minidump.ko smem.ko
+zsmalloc.ko:
+dcvs_fp.ko: qcom_rpmh.ko cmd-db.ko qcom_ipc_logging.ko minidump.ko smem.ko
+dispcc-diwali.ko: clk-qcom.ko gdsc-regulator.ko proxy-consumer.ko debug-regulator.ko
+ddr_cdev.ko:
+icc-bcm-voter.ko: qcom_rpmh.ko cmd-db.ko qcom_ipc_logging.ko minidump.ko smem.ko
+mtd.ko:
+pmic-pon-log.ko: qcom_ipc_logging.ko minidump.ko smem.ko
+qcom-vadc-common.ko:
+snd_event_dlkm.ko:
+qcom_edac.ko:
+qcom_logbuf_vendor_hooks.ko: minidump.ko smem.ko
+gh_virtio_backend.ko: secure_buffer.ko qcom-scm.ko gh_rm_drv.ko gh_dbl.ko gh_msgq.ko gh_arm_drv.ko
+chipreg.ko:
+smp2p.ko: qcom_ipc_logging.ko minidump.ko smem.ko
+phy-qcom-ufs.ko:
+qti_battery_debug.ko: pmic_glink.ko pdr_interface.ko qmi_helpers.ko rproc_qcom_common.ko qcom_smd.ko qcom_glink_smem.ko qcom_glink.ko qcom_ipc_logging.ko minidump.ko smem.ko
+snd-usb-audio-qmi.ko: qmi_helpers.ko qcom_ipc_logging.ko minidump.ko smem.ko
+dcc_v2.ko: minidump.ko smem.ko
+qcom_sync_file.ko:
+slim-qcom-ngd-ctrl.ko: slimbus.ko pdr_interface.ko qmi_helpers.ko rproc_qcom_common.ko qcom_smd.ko qcom_glink_smem.ko qcom_glink.ko qcom_ipc_logging.ko minidump.ko smem.ko
+qti_cpufreq_cdev.ko:
+shared_rail_vendor.ko:
+camcc-waipio.ko: clk-qcom.ko gdsc-regulator.ko proxy-consumer.ko debug-regulator.ko
+socinfo.ko: smem.ko
+bcl_soc.ko:
+stub-regulator.ko: debug-regulator.ko
+gpi.ko: qcom_ipc_logging.ko minidump.ko smem.ko
+spf_core_dlkm.ko: gpr_dlkm.ko snd_event_dlkm.ko q6_notifier_dlkm.ko q6_pdr_dlkm.ko pdr_interface.ko qmi_helpers.ko rproc_qcom_common.ko qcom_smd.ko qcom_glink_smem.ko qcom_glink.ko qcom_ipc_logging.ko minidump.ko smem.ko
+pinctrl-cape.ko: pinctrl-msm.ko qcom-scm.ko
+pinctrl-spmi-gpio.ko:
+phy-qcom-ufs-qmp-v4-diwali.ko: phy-qcom-ufs.ko
+smcinvoke_mod.ko: qseecom-mod.ko mem_buf_dev.ko secure_buffer.ko qcom-scm.ko gh_rm_drv.ko gh_dbl.ko gh_msgq.ko gh_arm_drv.ko
+rtc-pm8xxx.ko:
+coresight-stm.ko: coresight.ko stm_core.ko
+gh_rm_drv.ko: gh_dbl.ko gh_msgq.ko gh_arm_drv.ko
+qpnp-amoled-regulator.ko: debug-regulator.ko
+qnoc-diwali.ko: qnoc-qos.ko icc-rpmh.ko icc-debug.ko icc-bcm-voter.ko qcom_rpmh.ko cmd-db.ko qcom_ipc_logging.ko minidump.ko smem.ko
+qrtr-gunyah.ko: secure_buffer.ko qrtr.ko qcom-scm.ko qcom_ipc_logging.ko minidump.ko smem.ko gh_rm_drv.ko gh_dbl.ko gh_msgq.ko gh_arm_drv.ko
+coresight-hwevent.ko: coresight-csr.ko coresight.ko
+dwc3-msm.ko: ssusb-redriver-nb7vpq904m.ko ucsi_glink.ko pmic_glink.ko pdr_interface.ko qmi_helpers.ko rproc_qcom_common.ko qcom_smd.ko qcom_glink_smem.ko qcom_glink.ko qcom_ipc_logging.ko minidump.ko smem.ko clk-qcom.ko gdsc-regulator.ko proxy-consumer.ko debug-regulator.ko
+qti_userspace_cdev.ko:
+ssusb-redriver-nb7vpq904m.ko: ucsi_glink.ko pmic_glink.ko pdr_interface.ko qmi_helpers.ko rproc_qcom_common.ko qcom_smd.ko qcom_glink_smem.ko qcom_glink.ko qcom_ipc_logging.ko minidump.ko smem.ko
+cdsp-loader.ko:
+hwkm.ko: tmecom-intf.ko
+subsystem_sleep_stats.ko: soc_sleep_stats.ko mi_power.ko smem.ko
+qcom_pil_info.ko:
+shared_rail_scmi.ko: msm_performance.ko qcom-pmu-lib.ko qcom_llcc_pmu.ko sched-walt.ko metis.ko mi_schedule.ko qcom-cpufreq-hw.ko
+nvmem_qfprom.ko:
+videocc-waipio.ko: clk-qcom.ko gdsc-regulator.ko proxy-consumer.ko debug-regulator.ko
+pinctrl-msm.ko: qcom-scm.ko
+pinctrl-waipio.ko: pinctrl-msm.ko qcom-scm.ko
+cpu_voltage_cooling.ko:
+mem_buf_dev.ko: secure_buffer.ko qcom-scm.ko gh_rm_drv.ko gh_dbl.ko gh_msgq.ko gh_arm_drv.ko
+msm_drm.ko: msm-mmrm.ko spmi-pmic-arb.ko hdcp_qseecom.ko msm_ext_display.ko fsa4480-i2c.ko qti-regmap-debugfs.ko altmode-glink.ko qseecom-mod.ko msm_dma_iommu_mapping.ko gh_mem_notifier.ko gh_irq_lend.ko qcom_iommu_util.ko llcc-qcom.ko mem_buf_dev.ko secure_buffer.ko qcom_rpmh.ko cmd-db.ko pinctrl-msm.ko dwc3-msm.ko ssusb-redriver-nb7vpq904m.ko ucsi_glink.ko pmic_glink.ko pdr_interface.ko qmi_helpers.ko qcom-scm.ko rproc_qcom_common.ko qcom_smd.ko qcom_glink_smem.ko qcom_glink.ko qcom_ipc_logging.ko minidump.ko smem.ko clk-qcom.ko gdsc-regulator.ko proxy-consumer.ko gh_rm_drv.ko gh_dbl.ko gh_msgq.ko gh_arm_drv.ko panel_event_notifier.ko debug-regulator.ko
+binder_prio.ko:
+hvc_gunyah.ko: gh_rm_drv.ko gh_dbl.ko gh_msgq.ko gh_arm_drv.ko
+slimbus.ko:
+ufshcd-crypto-qti.ko: crypto-qti-common.ko crypto-qti-hwkm.ko hwkm.ko tmecom-intf.ko qcom-scm.ko
+crypto-qti-hwkm.ko: hwkm.ko tmecom-intf.ko qcom-scm.ko
+gpucc-diwali.ko: clk-qcom.ko gdsc-regulator.ko proxy-consumer.ko debug-regulator.ko
+pmu_vendor.ko:
+usb_f_qdss.ko: usb_bam.ko sps_drv.ko dwc3-msm.ko ssusb-redriver-nb7vpq904m.ko ucsi_glink.ko pmic_glink.ko pdr_interface.ko qmi_helpers.ko rproc_qcom_common.ko qcom_smd.ko qcom_glink_smem.ko qcom_glink.ko qcom_ipc_logging.ko minidump.ko smem.ko clk-qcom.ko gdsc-regulator.ko proxy-consumer.ko debug-regulator.ko
+qcom_rpmh.ko: cmd-db.ko qcom_ipc_logging.ko minidump.ko smem.ko
+secure_buffer.ko: qcom-scm.ko
+mi_thermal_interface.ko: panel_event_notifier.ko
+coresight-tgu.ko: coresight.ko
+phy-msm-snps-hs.ko: qcom-scm.ko
+msm_qmp.ko: qcom_aoss.ko qcom_ipc_logging.ko minidump.ko smem.ko
+glink_probe.ko: rproc_qcom_common.ko qcom_smd.ko qcom_glink_smem.ko qcom_glink.ko qcom_ipc_logging.ko minidump.ko smem.ko
+repeater-i2c-eusb2.ko: qti-regmap-debugfs.ko repeater.ko
+phy-generic.ko:
+qrtr-smd.ko: qrtr.ko qcom_glink.ko qcom_ipc_logging.ko minidump.ko smem.ko
+qcom_rimps.ko:
+cqhci.ko: crypto-qti-common.ko crypto-qti-hwkm.ko hwkm.ko tmecom-intf.ko qcom-scm.ko
+mhi_dev_net.ko: qcom_ipc_logging.ko minidump.ko smem.ko
+regmap-spmi.ko:
+sched-walt.ko: metis.ko mi_schedule.ko qcom-cpufreq-hw.ko
+ax88179_178a.ko:
+bt_fm_slim.ko: btpower.ko slimbus.ko
+clk-rpmh.ko: qcom_rpmh.ko cmd-db.ko qcom_ipc_logging.ko minidump.ko smem.ko
+ufs_qcom.ko: qcom-reboot-reason.ko ufshcd-crypto-qti.ko crypto-qti-common.ko crypto-qti-hwkm.ko hwkm.ko tmecom-intf.ko qcom-scm.ko qcom_ipc_logging.ko minidump.ko smem.ko clk-qcom.ko gdsc-regulator.ko proxy-consumer.ko phy-qcom-ufs.ko debug-regulator.ko
+adsp_loader_dlkm.ko: spf_core_dlkm.ko gpr_dlkm.ko snd_event_dlkm.ko q6_notifier_dlkm.ko q6_pdr_dlkm.ko pdr_interface.ko qmi_helpers.ko rproc_qcom_common.ko qcom_smd.ko qcom_glink_smem.ko qcom_glink.ko qcom_ipc_logging.ko minidump.ko smem.ko
+coresight-funnel.ko: coresight.ko
+qdss_bridge.ko: usb_f_qdss.ko usb_bam.ko sps_drv.ko dwc3-msm.ko ssusb-redriver-nb7vpq904m.ko ucsi_glink.ko pmic_glink.ko pdr_interface.ko qmi_helpers.ko mhi.ko pci-msm-drv.ko rproc_qcom_common.ko qcom_smd.ko qcom_glink_smem.ko qcom_glink.ko qcom_ipc_logging.ko minidump.ko smem.ko clk-qcom.ko gdsc-regulator.ko proxy-consumer.ko debug-regulator.ko
+leds-qti-tri-led.ko: pwm-qti-lpg.ko qpnp-pbs.ko
+mi_power.ko: smem.ko
+nvmem_qcom-spmi-sdam.ko:
+sysmon_subsystem_stats.ko: smem.ko
+sps_drv.ko: qcom_ipc_logging.ko minidump.ko smem.ko
+coresight-remote-etm.ko: qmi_helpers.ko coresight.ko
+msm_memshare.ko: heap_mem_ext_v01.ko secure_buffer.ko qmi_helpers.ko qcom-scm.ko
+msm_show_epoch.ko:
+qcom-spmi-adc5.ko: qcom-vadc-common.ko
+fpc1540.ko: panel_event_notifier.ko
+qti-fixed-regulator.ko: proxy-consumer.ko debug-regulator.ko
+gdsc-regulator.ko: proxy-consumer.ko debug-regulator.ko
+mtdblock.ko: mtd_blkdevs.ko mtd.ko
+qcom-i2c-pmic.ko: qti-regmap-debugfs.ko
+msm-geni-se.ko: qcom_ipc_logging.ko minidump.ko smem.ko
+msm_show_resume_irq.ko:
+qti_qmi_sensor_v2.ko: qmi_helpers.ko
+arm_smmu.ko: iommu-logger.ko qcom_iommu_util.ko secure_buffer.ko qcom-scm.ko
+phy-qcom-emu.ko:
+pmu_scmi.ko: qcom-pmu-lib.ko qcom_llcc_pmu.ko
+ep_pcie_drv.ko: pci-edma.ko qcom_ipc_logging.ko minidump.ko smem.ko
+gpucc-waipio.ko: clk-qcom.ko gdsc-regulator.ko proxy-consumer.ko debug-regulator.ko
+coresight-cti.ko: coresight.ko
+f_fs_ipc_log.ko: qcom_ipc_logging.ko minidump.ko smem.ko
+thermal_pause.ko: sched-walt.ko metis.ko mi_schedule.ko qcom-cpufreq-hw.ko
+qcom_esoc.ko: qcom_sysmon.ko qmi_helpers.ko rproc_qcom_common.ko qcom_smd.ko qcom_glink_smem.ko qcom_glink.ko qcom_ipc_logging.ko minidump.ko smem.ko
+qti_battery_charger.ko: pmic_glink.ko pdr_interface.ko qmi_helpers.ko rproc_qcom_common.ko qcom_smd.ko qcom_glink_smem.ko qcom_glink.ko qcom_ipc_logging.ko minidump.ko smem.ko panel_event_notifier.ko
+pinctrl-spmi-mpp.ko:
+msm_lmh_dcvs.ko:
+synx-driver.ko: qcom_ipc_lite.ko
+crypto-qti-common.ko: crypto-qti-hwkm.ko hwkm.ko tmecom-intf.ko qcom-scm.ko
+glink_pkt.ko: qcom_ipc_logging.ko minidump.ko smem.ko
+qcom_ipcc.ko:
+zram.ko: zsmalloc.ko
+memlat.ko: qcom-pmu-lib.ko qcom_llcc_pmu.ko qcom-dcvs.ko dcvs_fp.ko qcom_rpmh.ko cmd-db.ko qcom_ipc_logging.ko minidump.ko smem.ko
+radio-i2c-rtc6226-qca.ko:
+llcc-qcom.ko:
+block2mtd.ko: mtd.ko
+qcom_q6v5.ko: qcom_sysmon.ko qmi_helpers.ko rproc_qcom_common.ko qcom_smd.ko qcom_glink_smem.ko qcom_glink.ko qcom_ipc_logging.ko minidump.ko smem.ko
+gplaf_scmi.ko: msm_performance.ko qcom-pmu-lib.ko qcom_llcc_pmu.ko sched-walt.ko metis.ko mi_schedule.ko qcom-cpufreq-hw.ko
+pwm-qti-lpg.ko: qpnp-pbs.ko
+icc-rpmh.ko: icc-debug.ko icc-bcm-voter.ko qcom_rpmh.ko cmd-db.ko qcom_ipc_logging.ko minidump.ko smem.ko
+pci-msm-drv.ko: rproc_qcom_common.ko qcom_smd.ko qcom_glink_smem.ko qcom_glink.ko qcom_ipc_logging.ko minidump.ko smem.ko clk-qcom.ko gdsc-regulator.ko proxy-consumer.ko debug-regulator.ko
+ir-spi.ko:
+msm_sharedmem.ko: secure_buffer.ko qcom-scm.ko
+stm_console.ko: stm_core.ko
+pmic_glink.ko: pdr_interface.ko qmi_helpers.ko rproc_qcom_common.ko qcom_smd.ko qcom_glink_smem.ko qcom_glink.ko qcom_ipc_logging.ko minidump.ko smem.ko
+mhi_dev_drv.ko: mhi_dev_net.ko ep_pcie_drv.ko pci-edma.ko ipa_fmwk.ko qcom_ipc_logging.ko minidump.ko smem.ko
+pdr_interface.ko: qmi_helpers.ko
+qcom_llcc_pmu.ko:
+adsp_sleepmon.ko: smem.ko
+qcom-spmi-pmic.ko: regmap-spmi.ko qti-regmap-debugfs.ko
+sdhci-msm.ko: cqhci.ko crypto-qti-common.ko crypto-qti-hwkm.ko hwkm.ko tmecom-intf.ko qcom-scm.ko qcom_ipc_logging.ko minidump.ko smem.ko clk-qcom.ko gdsc-regulator.ko proxy-consumer.ko debug-regulator.ko
+spmi-pmic-arb.ko:
