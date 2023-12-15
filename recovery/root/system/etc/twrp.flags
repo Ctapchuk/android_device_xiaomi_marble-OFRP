@@ -1,10 +1,10 @@
 # mount point   fstype  device                                          device2             flags
 # Logical partitions
-/system_ext     ext4    system_ext                                                          flags=display=System_EXT
-/vendor_dlkm    ext4    vendor_dlkm                                                         flags=display=Vendor_DLKM
+/mi_ext		auto    mi_ext								    flags=display="Mi-EXT"
 
 # Userdata/Metadata partitions
-/metadata       ext4    /dev/block/by-name/metadata                                         flags=display=Metadata
+/metadata       ext4    /dev/block/by-name/metadata                                         flags=display="Metadata"
+/storage	ext4    /data/media/0							    flags=display="Internal Storage";backup=1;removable;usermrf;fsflags="bind,utf8"
 
 # Other partitions
 /boot           emmc    /dev/block/bootdevice/by-name/boot                                  flags=slotselect
@@ -18,7 +18,7 @@
 
 # Persistent Firmware & Properties
 /firmware       vfat    /dev/block/bootdevice/by-name/modem                                 flags=slotselect;display="Firmware";mounttodecrypt;fsflags="ro,shortname=lower,uid=1000,gid=1000,dmask=227,fmask=337,context=u:object_r:firmware_file:s0"
-/persist        ext4    /dev/block/bootdevice/by-name/persist                               flags=display="Persist";fsflags=ro
+/persist        ext4    /dev/block/bootdevice/by-name/persist                               flags=display="Persist";
 /persist_image  emmc    /dev/block/bootdevice/by-name/persist                               flags=display="Persist";backup=1
 
 # Modem partitions
@@ -33,4 +33,4 @@
 /efsg           emmc    /dev/block/bootdevice/by-name/fsg                                   flags=backup=1;subpartitionof=/efs1
 
 # Removable storage
-/usbstorage     vfat    /dev/block/sdg1                                 /dev/block/sdg      flags=fsflags=utf8;display="USB Storage";storage;wipeingui;removable
+/usb_otg        auto	/dev/block/sdg1		/dev/block/sdg        			    flags=display="USB-Storage";storage;wipeingui;removable;fsflags="utf8"
