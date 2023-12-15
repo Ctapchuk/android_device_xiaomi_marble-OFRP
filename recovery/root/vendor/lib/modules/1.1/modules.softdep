@@ -1,0 +1,21 @@
+# Soft dependencies extracted from modules themselves.
+softdep soc_sleep_stats pre: smem
+softdep q6_notifier_dlkm pre: qcom_q6v5_pas
+softdep msm_kgsl pre: qcom-arm-smmu-mod nvmem_qfprom
+softdep qmi_helpers pre: qrtr
+softdep pinctrl_diwali pre: qcom_tlmm_vm_irqchip
+softdep phy_msm_snps_eusb2 pre: repeater-i2c-eusb2
+softdep c1dcvs_scmi pre: c1dcvs_vendor
+softdep plh_scmi pre: plh_vendor
+softdep qsee_ipc_irq_bridge pre: qcom_ipcc
+softdep smem pre: qcom_hwspinlock
+softdep pinctrl_cape pre: qcom_tlmm_vm_irqchip
+softdep dwc3_msm pre: phy-generic phy-msm-snps-hs phy-msm-snps-eusb2 phy-msm-ssusb-qmp eud post: ucsi_glink
+softdep cdsp_loader pre: qcom_q6v5_pas
+softdep shared_rail_scmi pre: shared_rail_vendor
+softdep pinctrl_msm pre: qcom-pdc
+softdep pinctrl_waipio pre: qcom_tlmm_vm_irqchip
+softdep msm_drm pre: msm-mmrm
+softdep leds_qti_tri_led pre: pwm-qti-lpg
+softdep pmu_scmi pre: pmu_vendor
+softdep gplaf_scmi pre: gplaf_vendor
