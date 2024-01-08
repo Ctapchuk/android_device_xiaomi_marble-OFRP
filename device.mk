@@ -62,6 +62,10 @@ PRODUCT_PACKAGES += update_engine \
     android.hardware.boot@1.2-service
 
 PRODUCT_PACKAGES += \
+        bootctl
+RECOVERY_BINARY_SOURCE_FILES += $(TARGET_OUT_EXECUTABLES)/bootctl
+
+PRODUCT_PACKAGES += \
   update_engine_sideload
 
 # f2fs utilities
