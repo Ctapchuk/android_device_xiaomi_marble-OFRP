@@ -23,8 +23,8 @@
 
 # Modem partitions
 /modem          emmc    /dev/block/bootdevice/by-name/modem                                 flags=slotselect;backup;flashimg;display="Modem"
-/bluetooth      emmc    /dev/block/bootdevice/by-name/bluetooth                             flags=slotselect;backup;subpartitionof=/modem
-/dsp            emmc    /dev/block/bootdevice/by-name/dsp                                   flags=slotselect;backup;subpartitionof=/modem
+/bluetooth      emmc    /dev/block/bootdevice/by-name/bluetooth                             flags=slotselect;backup;flashimg;display="Bluetooth"
+/dsp            emmc    /dev/block/bootdevice/by-name/dsp                                   flags=slotselect;backup;flashimg;display="DSP"
 
 # EFS partitions
 /efs1           emmc    /dev/block/bootdevice/by-name/modemst1                              flags=backup;display="EFS"
