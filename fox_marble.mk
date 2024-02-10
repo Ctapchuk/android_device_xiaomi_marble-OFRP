@@ -18,7 +18,7 @@
 # 	Please maintain this if you use this script or any part of it
 #
 
-# OrangeFox-specific settings #
+# OrangeFox settings
 OF_HIDE_NOTCH := 1
 OF_USE_GREEN_LED := 0
 OF_FLASHLIGHT_ENABLE := 1
@@ -27,8 +27,9 @@ OF_QUICK_BACKUP_LIST := /data;/boot;
 OF_SKIP_MULTIUSER_FOLDERS_BACKUP := 1
 OF_ENABLE_USB_STORAGE := 1
 OF_IGNORE_LOGICAL_MOUNT_ERRORS := 1
+OF_BIND_MOUNT_SDCARD_ON_FORMAT := 1
 
-#OFR settings
+# OrangeFox GUI settings
 OF_SCREEN_H := 2400
 OF_STATUS_H := 100
 OF_STATUS_INDENT_LEFT := 48
