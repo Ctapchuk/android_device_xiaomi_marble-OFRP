@@ -50,4 +50,10 @@ on property:twrp.modules.loaded=true
     start health-hal-2-1
     start vibratorfeature-hal-service
     umount /firmware
+    
+on property:twrp.enable.fastcharge=true
+    start batterysecret
+    
+on property:twrp.enable.fastcharge=false
+    stop batterysecret
 #
