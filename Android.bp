@@ -1,4 +1,0 @@
-soong_namespace {
-    imports: ["system/extras/bootctl"],
-}
-

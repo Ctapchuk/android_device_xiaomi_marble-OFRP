@@ -61,11 +61,6 @@ PRODUCT_PACKAGES += update_engine \
 PRODUCT_SOONG_NAMESPACES += \
     $(DEVICE_PATH)
 
-# Build bootctl
-PRODUCT_PACKAGES += \
-        bootctl
-RECOVERY_BINARY_SOURCE_FILES += $(TARGET_OUT_EXECUTABLES)/bootctl
-
 PRODUCT_PACKAGES += \
   update_engine_sideload
 
