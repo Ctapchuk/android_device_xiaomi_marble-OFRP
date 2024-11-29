@@ -6,6 +6,7 @@ load_global()
 {
     echo "POCO F5" > /config/usb_gadget/g1/strings/0x409/product;
     resetprop "ro.product.brand" "POCO";
+    resetprop "ro.orangefox.device_model" "POCO F5";
     echo "I:unified-script: setting POCO F5 props" >> $LOGF;
 }
 
@@ -13,6 +14,7 @@ load_CN()
 {
     echo "Redmi Note 12 Turbo" > /config/usb_gadget/g1/strings/0x409/product;
     resetprop "ro.product.brand" "Redmi";
+    resetprop "ro.orangefox.device_model" "Redmi Note 12 Turbo";
     echo "I:unified-script: setting Redmi Note 12 Turbo props" >> $LOGF;
 }
 
