@@ -34,4 +34,4 @@
 /efsg           emmc    /dev/block/bootdevice/by-name/fsg                                   flags=backup;subpartitionof=/efs1
 
 # Removable storage
-/usb_otg        auto	/dev/block/sdg1		/dev/block/sdg        			    flags=display="USB-Storage";storage;wipeingui;removable;fsflags="utf8"
+/usb_otg        auto	/dev/block/sdg1		/dev/block/sdh1        			    flags=storage;wipeingui;removable;fsflags="utf8"
