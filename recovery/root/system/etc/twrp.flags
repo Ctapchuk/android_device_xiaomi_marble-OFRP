@@ -5,7 +5,7 @@
 
 # Userdata/Metadata partitions
 /metadata       ext4    /dev/block/by-name/metadata                                         flags=display="Metadata"
-/storage	ext4    /data/media/0							    flags=display="Internal Storage";backup;removable;usermrf;fsflags="bind,utf8"
+/storage	auto    /data/media/0							    flags=backup;removable;fsflags="bind,utf8"
 
 # Other partitions
 /boot           emmc    /dev/block/bootdevice/by-name/boot                                  flags=slotselect
