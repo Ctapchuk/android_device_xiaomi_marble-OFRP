@@ -3,13 +3,10 @@
 /system_image   emmc    /dev/block/mapper/system					    flags=slotselect
 /mi_ext		auto    mi_ext								    flags=display="Mi-EXT";logical
 
-# Userdata/Metadata partitions
-/storage	auto    /data/media/0							    flags=backup;removable;fsflags="bind,utf8"
-
 # Other partitions
 /boot           emmc    /dev/block/bootdevice/by-name/boot                                  flags=slotselect
-/cache         	ext4    /dev/block/bootdevice/by-name/rescue			  	    flags=display="Cache";backup=0;wipeingui;wipeduringfactoryreset
-/recovery       emmc    /dev/block/bootdevice/by-name/recovery                              flags=slotselect;display="Recovery";backup;flashimg
+/cache         	ext4    /dev/block/bootdevice/by-name/rescue			  	    flags=backup=0
+/recovery       emmc    /dev/block/bootdevice/by-name/recovery                              flags=slotselect;backup
 /vendor_boot    emmc    /dev/block/bootdevice/by-name/vendor_boot                           flags=slotselect;display="Vendor Boot";backup;flashimg
 /frp            emmc    /dev/block/bootdevice/by-name/frp                                   flags=display="FRP";wipeingui
 
@@ -35,4 +32,5 @@
 /efsg           emmc    /dev/block/bootdevice/by-name/fsg                                   flags=backup;subpartitionof=/efs1
 
 # Removable storage
+/storage	auto    /data/media/0							    flags=backup;removable;fsflags="bind,utf8"
 /usb_otg        auto	/dev/block/sdg1		/dev/block/sdh1        			    flags=storage;wipeingui;removable;fsflags="utf8"
