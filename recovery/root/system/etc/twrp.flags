@@ -4,7 +4,6 @@
 /mi_ext		auto    mi_ext								    flags=display="Mi-EXT";logical
 
 # Userdata/Metadata partitions
-/metadata       ext4    /dev/block/by-name/metadata                                         flags=display="Metadata"
 /storage	auto    /data/media/0							    flags=backup;removable;fsflags="bind,utf8"
 
 # Other partitions
