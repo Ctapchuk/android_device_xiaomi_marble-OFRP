@@ -3,8 +3,8 @@
 # Detect current firmware and use proper kernel modules.
 
 LOGF=/tmp/recovery.log;
-slot=`getprop ro.boot.slot_suffix`;
-[[ -z $slot ]] && slot=`bootctl get-current-slot | xargs bootctl get-suffix`;
+slot=$(getprop ro.boot.slot_suffix);
+[[ -z $slot ]] && slot=$(bootctl get-current-slot | xargs bootctl get-suffix);
 modules=/vendor/lib/modules;
 
 mkdir -p $modules/1.1;

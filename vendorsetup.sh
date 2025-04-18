@@ -45,7 +45,10 @@ if [ "$1" = "$FDEVICE" -o "$FOX_BUILD_DEVICE" = "$FDEVICE" ]; then
 	export FOX_RECOVERY_SYSTEM_PARTITION="/dev/block/mapper/system"
 	export FOX_RECOVERY_VENDOR_PARTITION="/dev/block/mapper/vendor"
 	export FOX_DELETE_INITD_ADDON=1
+	export FOX_MOVE_MAGISK_INSTALLER_TO_RAMDISK=1
 	export FOX_SETTINGS_ROOT_DIRECTORY="/persist/OFRP"
+	export FOX_ALLOW_EARLY_SETTINGS_LOAD=1
+	export FOX_MISCELLANEOUS_ROOT_DIRECTORY="/sdcard"
 
 	#OFR binary files
 	export FOX_REPLACE_BUSYBOX_PS=1
