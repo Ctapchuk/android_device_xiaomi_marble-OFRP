@@ -1,0 +1,11 @@
+service vendor.qti.vibrator /system/bin/vendor.qti.hardware.vibrator.service
+    class hal
+    user root
+    group root input
+    onrestart restart vibrator
+    setenv LD_LIBRARY_PATH /vendor/lib64:/vendor/lib64/hw:/system/lib64:/sbin
+    disabled
+    seclabel u:r:recovery:s0
+
+on late-init
+    write /sys/class/leds/vibrator/trigger "transient"

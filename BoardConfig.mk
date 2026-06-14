@@ -23,9 +23,6 @@
 # *not* include it on all devices, so it is safe even with hardware-specific
 # components.
 
-# SDK
-BOARD_SYSTEMSDK_VERSIONS := 31
-
 # Architecture
 TARGET_ARCH := arm64
 TARGET_ARCH_VARIANT := armv8-a-branchprot
@@ -50,12 +47,10 @@ BOARD_BOOT_HEADER_VERSION := 4
 BOARD_MKBOOTIMG_ARGS := --header_version $(BOARD_BOOT_HEADER_VERSION)
 BOARD_EXCLUDE_KERNEL_FROM_RECOVERY_IMAGE := true
 BOARD_RAMDISK_USE_LZ4 := true
+TARGET_PREBUILT_KERNEL := $(DEVICE_PATH)/prebuilt/kernel-melt
 ifeq ($(BUILD_BOOTIMAGE),true)
 	BOARD_BOOTIMAGE_PARTITION_SIZE := 201326592
 	BOARD_USES_RECOVERY_AS_BOOT := true
-	TARGET_PREBUILT_KERNEL := $(DEVICE_PATH)/prebuilt/kernel-melt
-else
-	TARGET_NO_KERNEL_OVERRIDE := true
 endif
 
 # Partition Info
@@ -119,8 +114,6 @@ TARGET_VENDOR_PROP += $(DEVICE_PATH)/vendor.prop
 
 # Vibrator
 TW_SUPPORT_INPUT_AIDL_HAPTICS := true
-TW_SUPPORT_INPUT_AIDL_HAPTICS_FIX_OFF := true
-TW_SUPPORT_INPUT_AIDL_HAPTICS_FQNAME := "IVibrator/vibratorfeature"
 
 TARGET_RECOVERY_DEVICE_MODULES += libexpat
 RECOVERY_LIBRARY_SOURCE_FILES += $(TARGET_OUT_SHARED_LIBRARIES)/libexpat.so
