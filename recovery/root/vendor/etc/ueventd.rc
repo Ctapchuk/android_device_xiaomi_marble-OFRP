@@ -30,7 +30,7 @@
 # Firmware directory Path
 # Below macro will be read by uevent and path will
 # be added to search path for firmware loading
-firmware_directories /vendor/firmware_mnt/image/
+firmware_directories /vendor/firmware /vendor/etc/wifi/ /vendor/firmware_mnt/image/
 
 subsystem dma_heap
     devname uevent_devpath

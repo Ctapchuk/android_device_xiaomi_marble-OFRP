@@ -1,0 +1,40 @@
+service trigger_wlan_driver /system/bin/sh -c "echo ON > /dev/wlan"
+    user root
+    group root
+    disabled
+    oneshot
+    seclabel u:r:recovery:s0
+
+service cnss-daemon /vendor/bin/cnss-daemon -n -l
+    disabled
+    user root
+    group root system inet net_admin wifi
+    capabilities NET_ADMIN
+    seclabel u:r:recovery:s0
+
+service vendor.rmt_storage /vendor/bin/rmt_storage
+    disabled
+    user root
+    ioprio rt 0
+    seclabel u:r:recovery:s0
+
+service vendor.qrtr-ns /vendor/bin/qrtr-ns -f
+    disabled
+    user root
+    group root
+    capabilities NET_BIND_SERVICE
+    seclabel u:r:recovery:s0
+
+on property:start.wlan.services=true
+    start vendor.qrtr-ns
+    start vendor.rmt_storage
+    start cnss-daemon
+    mkdir /tmp/recovery 0777 root root
+    mkdir /tmp/recovery/sockets 0777 root root
+    start trigger_wlan_driver
+    write /sys/kernel/cnss/fs_ready 1
+
+service wpa_supplicant /system/bin/wpa_supplicant -Dnl80211 -iwlan0 -dd -O/tmp/recovery/sockets -c/vendor/etc/wifi/wpa_supplicant.conf
+    disabled
+    seclabel u:r:recovery:s0
+

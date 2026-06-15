@@ -26,6 +26,7 @@
 #
 
 import /init.recovery.qcom_decrypt.rc
+import /init.recovery.wifi.rc
 
 on init
     start boot-hal-1-2
@@ -49,5 +50,6 @@ on property:twrp.modules.loaded=true
     start health-hal-2-1
     start vendor.qti.vibrator
     start batterysecret
-    umount /firmware
+    umount /vendor
+    setprop start.wlan.services true
 #
